@@ -1,0 +1,24 @@
+:root {
+  /* Border & Text Colors */
+  --border-color: rgba(255, 255, 255, 0.2);
+  --text-primary: #ffffff;
+  --text-muted: #9ca3af; /* Gray */
+  --text-gray: #e5e7eb; /* Light gray */
+
+  --header-height: 9.6rem;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: aqua;
+  height: 100vh;
+  width: 100%;
+  font-family: sans-serif;
+}

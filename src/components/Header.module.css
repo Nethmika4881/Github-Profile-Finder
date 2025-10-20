@@ -1,0 +1,10 @@
+.header {
+  /* background-color: khaki; */
+  width: 100%;
+  padding: 1.6rem 2.4rem;
+  display: grid;
+  height: var(--header-height);
+  align-items: center;
+  grid-template-columns: 40rem 2fr 3fr;
+  background-color: #161e2d;
+}

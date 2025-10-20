@@ -1,0 +1,49 @@
+.main {
+  background-color: #f8f9fa;
+  height: calc(100vh - var(--header-height));
+  /* background-color: antiquewhite; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10rem;
+}
+
+.herotext {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 1.6rem 3.2rem;
+  /* background-color: aqua; */
+  margin-bottom: 3.2rem;
+}
+.herotext h1 {
+  font-size: 6.4rem;
+}
+
+.herotext h4 {
+  color: var(--text-muted);
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.searchbox {
+  /* background-color: rgb(192, 109, 7); */
+  background-color: white;
+  width: 70rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border-radius: 1.2rem;
+}
+
+.spinnerContainer {
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

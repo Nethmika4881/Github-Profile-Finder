@@ -1,0 +1,25 @@
+@baseUrl = https://api.github.com
+
+### 1. Search Users
+GET {{baseUrl}}/search/users?q=location:srilanka&per_page=5
+
+### 2. Get User Profile
+GET {{baseUrl}}/users/nethmika4881
+
+### 3. Get User Repos (sorted by stars)
+GET {{baseUrl}}/users/nethmika4881/repos?sort=stars&order=desc&per_page=10
+
+### 4. Get Repo Details
+GET {{baseUrl}}/repos/nethmika4881/linux
+
+### 5. Get Repo Languages
+GET {{baseUrl}}/repos/nethmika4881/linux/languages
+
+### 6. Search Repos by Language
+GET {{baseUrl}}/search/repos?q=language:javascript&stars:>1000&sort=stars&per_page=5
+
+### 7. Get Trending Users
+GET {{baseUrl}}/search/users?q=followers:>5000&sort=followers&order=desc&per_page=10
+
+### 8. Get User Events
+GET {{baseUrl}}/users/nethmika4881/events/public?per_page=10
