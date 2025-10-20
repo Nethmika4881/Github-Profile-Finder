@@ -1,9 +1,13 @@
 import { createContext, useContext, useState } from "react";
-
+const token = import.meta.env.VITE_GITHUB_TOKEN;
+console.log(token);
 const SearchContext = createContext();
 const SearchProvider = function ({ children }) {
   const [search, setSearch] = useState("");
   const [searchLoading, setSearchLoading] = useState(false);
+  const [searchedObject, setSearchedObject] = useState({});
+  const [clicked, setClicked] = useState(false);
+  const [message, setMessage] = useState("");
   //   useEffect(() => {
   //     const controller = new AbortController();
   //     if (!search) return;
@@ -28,18 +32,29 @@ const SearchProvider = function ({ children }) {
   //   }, [search]);
 
   const fetchUserRepos = async () => {
+    setSearchedObject({});
+    setClicked(true);
     try {
       setSearchLoading(true);
-      const res = await fetch(`https://api.github.com/users/${search}`);
-      if (!res.ok) throw new Error("👎 wrong username ");
+      setMessage("");
+      const res = await fetch(`https://api.github.com/users/${search}`, {
+        headers: {
+          Authorization: `token  ${token}`,
+        },
+      });
+      console.log(res.status, res);
+      if (!res.ok) throw new Error("wrong username ");
       const resJson = await res.json();
+      setSearchedObject(resJson);
       console.log(resJson);
     } catch (err) {
       if (err.name !== "AbortError") {
         console.error("Error fetching repos:", err.message);
+        setMessage(err.message);
       }
     } finally {
       setSearchLoading(false);
+      setSearch("");
     }
   };
 
@@ -51,6 +66,9 @@ const SearchProvider = function ({ children }) {
         setSearchLoading,
         search,
         setSearch,
+        searchedObject,
+        clicked,
+        message,
       }}
     >
       {children}{" "}
