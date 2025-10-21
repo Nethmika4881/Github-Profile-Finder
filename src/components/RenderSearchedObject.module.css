@@ -7,6 +7,9 @@
   transition: transform 0.3s ease;
   /* background-color: #667eea; */
   /* height: 20rem; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .card:hover {
@@ -101,4 +104,68 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 600;
+}
+
+.btn {
+  /* Display & Layout */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  /* Spacing */
+  padding: 1.2rem 2.4rem;
+  margin: 0;
+  height: 5.5rem;
+  /* Typography */
+  font-size: 1.5rem;
+  letter-spacing: 1.08px;
+  font-weight: 600;
+  font-family: inherit;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+
+  /* Colors */
+  background-color: blue;
+  color: white;
+  border: none;
+
+  /* Border & Shape */
+  border-radius: 0.5rem;
+  outline: none;
+
+  /* Effects */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  /* Prevent text selection */
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Hover State */
+.btn:hover {
+  background-color: darkblue;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Active State (when clicked) */
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Focus State (keyboard navigation) */
+.btn:focus {
+  outline: 2px solid rgba(0, 0, 255, 0.5);
+  outline-offset: 2px;
+}
+
+.back-btn {
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
 }

@@ -42,10 +42,3 @@
   padding: 3.2rem 3.2rem;
   margin-bottom: 5rem;
 }
-
-.spinnerContainer {
-  height: 6rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}

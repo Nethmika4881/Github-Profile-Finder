@@ -1,12 +1,12 @@
 import { createContext, useContext, useState } from "react";
+
 const token = import.meta.env.VITE_GITHUB_TOKEN;
 console.log(token);
 const SearchContext = createContext();
 const SearchProvider = function ({ children }) {
-  const [search, setSearch] = useState("");
   const [searchLoading, setSearchLoading] = useState(false);
   const [searchedObject, setSearchedObject] = useState({});
-  const [clicked, setClicked] = useState(false);
+  const [search, setSearch] = useState("");
   const [message, setMessage] = useState("");
   //   useEffect(() => {
   //     const controller = new AbortController();
@@ -30,14 +30,12 @@ const SearchProvider = function ({ children }) {
   //       controller.abort();
   //     };
   //   }, [search]);
-
-  const fetchUserRepos = async () => {
+  const fetchUserRepos = async (username) => {
     setSearchedObject({});
-    setClicked(true);
     try {
       setSearchLoading(true);
       setMessage("");
-      const res = await fetch(`https://api.github.com/users/${search}`, {
+      const res = await fetch(`https://api.github.com/users/${username}`, {
         headers: {
           Authorization: `token  ${token}`,
         },
@@ -64,11 +62,10 @@ const SearchProvider = function ({ children }) {
         fetchUserRepos,
         searchLoading,
         setSearchLoading,
+        searchedObject,
+        message,
         search,
         setSearch,
-        searchedObject,
-        clicked,
-        message,
       }}
     >
       {children}{" "}

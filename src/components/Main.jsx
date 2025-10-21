@@ -1,6 +1,6 @@
 import SearchBar from "./SearchBar";
 import styles from "./Main.module.css";
-import { useSearch } from "../contexts/SearchContext";
+
 import Spinner from "./Spinner";
 import RenderSearchedObject from "./RenderSearchedObject";
 import Message from "./Message";
@@ -25,15 +25,9 @@ function HeroText() {
 }
 
 function SearchBox() {
-  const { searchLoading, message } = useSearch();
   return (
     <div className={styles.searchbox}>
       <SearchBar />
-      <div className={styles.spinnerContainer}>
-        {searchLoading && <Spinner />}
-      </div>
-      {message && <Message />}
-      {!searchLoading && !message && <RenderSearchedObject />}
     </div>
   );
 }

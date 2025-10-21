@@ -1,10 +1,18 @@
 import styles from "./SearchBar.module.css";
 import { Search } from "lucide-react";
-import Spinner from "./Spinner";
 import { useSearch } from "../contexts/SearchContext";
+import { Link, useNavigate } from "react-router-dom";
 
 function SearchBar() {
   const { fetchUserRepos, search, setSearch } = useSearch();
+
+  const navigate = useNavigate();
+  async function handleSearch() {
+    if (!search.trim()) return;
+    await fetchUserRepos(); // Wait for data to load
+    navigate(`/details?name=${search}`);
+  }
+
   return (
     <div className={styles.searchBar}>
       <input
@@ -21,7 +29,7 @@ function SearchBar() {
 
       <button
         className={styles.btn}
-        onClick={fetchUserRepos}
+        onClick={handleSearch}
         disabled={!search.trim()}
       >
         <Search size="2rem" color="white" />
