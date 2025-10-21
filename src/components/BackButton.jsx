@@ -8,7 +8,7 @@ function BackButton() {
   return (
     <button
       className={`${styles.btn} ${styles["back-btn"]}`}
-      onClick={() => navigate(-1)}
+      onClick={() => navigate("/")}
     >
       <ArrowLeft size={24} color="white" />
       <span>Back</span>

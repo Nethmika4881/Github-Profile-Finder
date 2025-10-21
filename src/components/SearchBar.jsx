@@ -1,7 +1,7 @@
 import styles from "./SearchBar.module.css";
 import { Search } from "lucide-react";
 import { useSearch } from "../contexts/SearchContext";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function SearchBar() {
   const { fetchUserRepos, search, setSearch } = useSearch();

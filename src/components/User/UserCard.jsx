@@ -2,6 +2,7 @@ import BackButton from "../BackButton";
 import UserStats from "./UserStats";
 import DetailsRenderButton from "./DetailsRenderButton";
 import styles from "./RenderSearchedObject.module.css";
+import MoreDetails from "./MoreDetails";
 
 function UserCard({
   imgPath,
@@ -11,7 +12,6 @@ function UserCard({
   following,
   getPlanType,
   name,
-  handleRepoButton,
   setIsOpen,
   isOpen,
 }) {
@@ -33,11 +33,9 @@ function UserCard({
           following={following}
         />
 
-        <DetailsRenderButton
-          onShow={handleRepoButton}
-          setIsOpen={setIsOpen}
-          isOpen={isOpen}
-        />
+        <DetailsRenderButton setIsOpen={setIsOpen} isOpen={isOpen} />
+
+        {isOpen && <MoreDetails />}
       </div>
     </>
   );

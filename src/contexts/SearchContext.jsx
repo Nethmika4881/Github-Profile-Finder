@@ -31,6 +31,7 @@ const SearchProvider = function ({ children }) {
   //     };
   //   }, [search]);
   const fetchUserRepos = async (username) => {
+    if (!username) return;
     setSearchedObject({});
     try {
       setSearchLoading(true);

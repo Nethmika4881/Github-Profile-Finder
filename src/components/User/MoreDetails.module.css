@@ -1,0 +1,61 @@
+.details-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.details-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.repo-card {
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  transition: all 0.3s ease;
+}
+
+.repo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.repo-name a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.repo-name a:hover {
+  text-decoration: underline;
+}
+
+.repo-description {
+  margin: 10px 0;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.4;
+  min-height: 40px;
+}
+
+.repo-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #444;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 8px;
+  margin-top: 10px;
+}
