@@ -3,8 +3,9 @@ import UserStats from "./UserStats";
 import DetailsRenderButton from "./DetailsRenderButton";
 import styles from "./RenderSearchedObject.module.css";
 import MoreDetails from "./MoreDetails";
+import { useParams, useSearchParams } from "react-router-dom";
 
-function UserCard({
+const UserCard = function ({
   imgPath,
   bio,
   numOfPublicRepos,
@@ -15,6 +16,9 @@ function UserCard({
   setIsOpen,
   isOpen,
 }) {
+  const [search] = useSearchParams();
+  if (search.get("tab")) setIsOpen(true);
+
   return (
     <>
       <div className={styles["card-header"]}>
@@ -39,6 +43,6 @@ function UserCard({
       </div>
     </>
   );
-}
+};
 
 export default UserCard;
