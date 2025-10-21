@@ -3,7 +3,7 @@ import UserStats from "./UserStats";
 import DetailsRenderButton from "./DetailsRenderButton";
 import styles from "./RenderSearchedObject.module.css";
 import MoreDetails from "./MoreDetails";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 const UserCard = function ({
   imgPath,
