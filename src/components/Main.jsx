@@ -1,14 +1,13 @@
 import SearchBar from "./SearchBar";
 import styles from "./Main.module.css";
+import Features from "./Features";
 
-import Spinner from "./Spinner";
-import RenderSearchedObject from "./RenderSearchedObject";
-import Message from "./Message";
 function Main() {
   return (
     <div className={styles.main}>
       <HeroText />
       <SearchBox />
+      <Features />
     </div>
   );
 }

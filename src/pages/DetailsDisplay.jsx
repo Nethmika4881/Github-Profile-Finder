@@ -1,6 +1,6 @@
 import { useSearchParams } from "react-router-dom";
 import Header from "../components/Header";
-import RenderSearchedObject from "../components/RenderSearchedObject";
+import RenderSearchedObject from "../components/User/RenderSearchedObject";
 import { useSearch } from "../contexts/SearchContext";
 import { useEffect } from "react";
 

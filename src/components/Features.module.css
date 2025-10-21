@@ -1,0 +1,38 @@
+.container {
+  background: linear-gradient(135deg, #1e1f3b, #20234a);
+  color: #fff;
+  padding: 3rem 4rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  min-width: 50rem;
+  margin: 2rem auto;
+}
+
+.container ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.container ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #e0e0e0;
+  transition: color 0.2s ease;
+}
+
+.container h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.container li:hover {
+  color: #ffffff;
+}

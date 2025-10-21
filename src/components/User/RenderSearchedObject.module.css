@@ -7,9 +7,6 @@
   transition: transform 0.3s ease;
   /* background-color: #667eea; */
   /* height: 20rem; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .card:hover {
@@ -106,21 +103,24 @@
   font-weight: 600;
 }
 
-.btn {
-  /* Display & Layout */
-  display: inline-flex;
+.container {
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  flex-direction: column;
+  margin-top: 2rem;
+}
 
-  /* Spacing */
+.btn {
+  /* Display & Layout */
+
   padding: 1.2rem 2.4rem;
-  margin: 0;
-  height: 5.5rem;
-  /* Typography */
+  width: 100%;
+  margin: 0rem;
+  margin-top: 2rem;
   font-size: 1.5rem;
   letter-spacing: 1.08px;
-  font-weight: 600;
+
   font-family: inherit;
   line-height: 1;
   text-align: center;
@@ -143,29 +143,6 @@
   /* Prevent text selection */
   user-select: none;
   -webkit-user-select: none;
-}
 
-/* Hover State */
-.btn:hover {
-  background-color: darkblue;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Active State (when clicked) */
-.btn:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Focus State (keyboard navigation) */
-.btn:focus {
-  outline: 2px solid rgba(0, 0, 255, 0.5);
-  outline-offset: 2px;
-}
-
-.back-btn {
-  position: absolute;
-  left: 2rem;
-  top: 2rem;
+  grid-column: 1 / -1;
 }
