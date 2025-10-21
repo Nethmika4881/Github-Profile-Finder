@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
 
 const token = import.meta.env.VITE_GITHUB_TOKEN;
-console.log(token);
+
 const SearchContext = createContext();
 const SearchProvider = function ({ children }) {
   const [searchLoading, setSearchLoading] = useState(false);
@@ -41,11 +41,10 @@ const SearchProvider = function ({ children }) {
           Authorization: `token  ${token}`,
         },
       });
-      console.log(res.status, res);
+
       if (!res.ok) throw new Error("wrong username ");
       const resJson = await res.json();
       setSearchedObject(resJson);
-      console.log(resJson);
     } catch (err) {
       if (err.name !== "AbortError") {
         console.error("Error fetching repos:", err.message);

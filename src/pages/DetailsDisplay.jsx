@@ -3,7 +3,6 @@ import Header from "../components/Header";
 import RenderSearchedObject from "../components/User/RenderSearchedObject";
 import { useSearch } from "../contexts/SearchContext";
 import { useEffect, useState } from "react";
-import MoreDetails from "../components/User/MoreDetails";
 
 function DetailsDisplay() {
   const { fetchUserRepos } = useSearch();
@@ -12,7 +11,6 @@ function DetailsDisplay() {
   const [searchParams] = useSearchParams();
   const username = searchParams.get("name");
 
-  console.log(username);
   useEffect(() => {
     if (username) {
       fetchUserRepos(username);

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Spinner from "../Spinner";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import ErrorMessage from "./ErrorMessage";
 import styles from "./MoreDetails.module.css";
 
@@ -43,13 +43,9 @@ function MoreDetails() {
         {repos.map((repo) => (
           <div className={styles["repo-card"]} key={repo.id}>
             <h3 className={styles["repo-name"]}>
-              <Link
-                href={repo.html_url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
                 {repo.name}
-              </Link>
+              </a>
             </h3>
             <p className={styles["repo-description"]}>
               {repo.description ? repo.description : "No description provided."}
